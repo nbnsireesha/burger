@@ -1,0 +1,75 @@
+.burger-img{
+	display: block;
+	margin: auto;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+}
+.webname{
+	color:red;
+	display: block;
+	margin-left: 47%;
+	font-size: 30px;
+	font-family: 'Joti One', cursive;
+}
+h3{
+	font-family: 'Joti One', cursive;
+	font-family: 'Acme', sans-serif;
+	color: #FF5733;
+	font-family: 'Joti One', cursive;
+}
+body{
+	background: url(https://cdn.pixabay.com/photo/2017/03/14/07/56/wood-2142216__340.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index: -1
+}
+.parallax {
+    /* The image used */
+    background-image: url(https://cdn.pixabay.com/photo/2017/03/14/07/56/wood-2142216__340.jpg);
+
+    /* Full height */
+    height: 100%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+body, html {
+    height: 100%;
+}
+.hero{
+	margin-top: 20px;
+	padding-bottom: 15px;
+}
+.show{
+	margin-top: 20px;
+}
+.textblock{
+	z-index:2;
+	font-size:1.5rem;
+	  display:block;
+	  padding-bottom:2rem;
+}
+.doneeating{
+	width: 100%;
+}
+.eatenOnes{
+	border-radius: 25px;
+	margin:10px;
+	min-width: 250px;
+	border-color: green;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+.toeat{
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	border-color: red;
+	margin:10px;
+}
+.devour-button{
+	margin: 10px;
+}

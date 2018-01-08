@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>burger</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/burger_style.css">
+    <link href="https://fonts.googleapis.com/css?family=Joti+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Acme|Joti+One" rel="stylesheet">
+</head>
+</head>
+<body>
+  <div class="container-fluid">
+        <a class="webname" href="#">Burger</a>
+        <img src="https://cdn.pixabay.com/photo/2016/06/29/18/46/burger-1487481__340.png" alt="buger" class="navbar-center burger-img">   
+  </div>
+  <!-- text area to enter burger name -->
+  <div class="row">
+    <div class="col-md-3"></div>
+    <center>
+      <div class="col-md-6">
+        <form action="/burgers" method="POST">
+          <textarea class="form-control text-center" columns="8" rows="4" id="new_burger" name="burger_name" placeholder="Enter Your Burger Name"></textarea><br>
+          <button class="btn btn-success devour-button" type="submit">Add Burger</button> 
+        </form>   
+      </div>
+    </center>
+    <div class="col-md-3"></div> 
+  </div>
+    
+    <!-- main area -->
+    <center>
+      <div class="hero container-fluid row">
+        <div class="row">
+          <center>
+            <div class="col-md-6">
+              <h3>Want to eat</h3>
+              <div id="ready_to_eat">
+
+                  <!-- Dynamically Insert Burgers to be eaten Here -->
+                  {{#each burgers}}
+                    {{#unless devoured}}
+                    <form action="burgers/{{this.id}}?_method=PUT" method="POST">
+                      <div class="input-group">
+                        <li class="form-control toeat">{{this.id}}. {{this.burger_name}}</li>
+                          <span class="input-group-btn">
+                            <button class="btn btn-success devour-button" type="submit">Devour It!</button>
+                          </span>
+                      </div>
+                    </form>
+                    {{/unless}}
+                  {{/each}}
+
+              </div>
+              
+            </div>
+            <div class="col-md-6">
+              <h3>Done eating</h3>
+              <div id="already_eaten">
+
+                  <!-- Dynamically Insert Eaten Burgers Here -->
+                  {{#each burgers}}
+                    {{#if this.devoured}}
+                      <div class="input-group">
+                        <li class="form-control eatenOnes">{{this.id}}. {{this.burger_name}}</li>
+                      </div>
+                    {{/if}}
+                  {{/each}}
+
+              </div>
+              
+            </div>
+            
+          </center>
+        </div>  
+      </div>
+    </center>
+  <div class="parallax"></div> 
+
+</body>
+</html>
